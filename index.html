@@ -86,45 +86,11 @@
             color: #0f1115;
             border-color: #ffffff;
         }
-        /* Bagian Kanan dengan Gambar Baru */
+        /* Bagian Kanan */
         .right-section {
             flex: 1;
             background: url('https://github.com/ronnyabufaza/ronnyabufaza.github.io/blob/main/Untitled%20design_20260904_205521_0000.png?raw=true') no-repeat center center/cover;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .right-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 17, 21, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .profile-badge {
-            width: 280px;
-            height: 280px;
-            background: rgba(176, 141, 121, 0.85);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            border: 4px solid rgba(255, 255, 255, 0.15);
-            padding: 20px;
-        }
-        .profile-arabic-name {
-            font-size: 2.2rem;
-            color: #ffffff;
-            font-weight: bold;
-            line-height: 1.3;
         }
         /* Responsif untuk HP */
         @media (max-width: 900px) {
@@ -148,8 +114,8 @@
             
             <div class="main-title-box">
                 <h1 class="main-title">PELAJAR<br>SEPANJANG<br>HAYAT</h1>
-                <div class="arabic-quote">وَقُلۡ رَّبِّ زِدۡنِيۡ عِلۡمًا</div>
-                <div class="translation-quote">"Dan katakanlah, 'Ya Rabb, tambahkanlah aku ilmu lain di samping ilmu yang telah Engkau ajarkan padaku!'"</div>
+                <div class="arabic-quote">وَقُلْ رَبِّ زِدْنِي عِلْمًا</div>
+                <div class="translation-quote">"Dan katakanlah: Ya Rabb, tambahkanlah aku ilmu lain di samping ilmu yang telah Engkau ajarkan padaku!"</div>
                 
                 <div class="button-group">
                     <a href="#belajar" class="btn">Belajar Bersama</a>
@@ -160,14 +126,8 @@
             <div></div> <!-- Spacer -->
         </div>
 
-        <!-- Kolom Kanan -->
-        <div class="right-section">
-            <div class="right-overlay">
-                <div class="profile-badge">
-                    <div class="profile-arabic-name">راني<br>أبو فازا</div>
-                </div>
-            </div>
-        </div>
+        <!-- Kolom Kanan (Tanpa Lingkaran Teks) -->
+        <div class="right-section"></div>
     </div>
 
 </body>

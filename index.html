@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ronny Abu Faza - Pelajar Sepanjang Hayat</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +22,7 @@
         }
         .container {
             display: flex;
-            width: 100vw;
+            width: 100%;
             height: 100vh;
             position: relative;
         }
@@ -33,6 +35,7 @@
             justify-content: space-between;
             padding: 40px 60px;
             position: relative;
+            z-index: 1;
         }
         .top-brand {
             font-size: 14px;
@@ -42,6 +45,8 @@
         }
         .main-title-box {
             margin: auto 0;
+            position: relative;
+            z-index: 2;
         }
         .main-title {
             font-size: clamp(3rem, 5vw, 5.5rem);
@@ -68,6 +73,8 @@
             display: flex;
             gap: 15px;
             margin-top: 30px;
+            position: relative;
+            z-index: 10;
         }
         .btn {
             padding: 12px 28px;
@@ -80,6 +87,11 @@
             background: rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
             backdrop-filter: blur(5px);
+            display: inline-block;
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
+            pointer-events: auto;
         }
         .btn:hover {
             background: #ffffff;
@@ -91,6 +103,7 @@
             flex: 1;
             background: url('https://github.com/ronnyabufaza/ronnyabufaza.github.io/blob/main/Untitled%20design_20260904_205521_0000.png?raw=true') no-repeat center center/cover;
             position: relative;
+            z-index: 0;
         }
         /* Responsif untuk HP */
         @media (max-width: 900px) {
@@ -118,7 +131,6 @@
                 <div class="translation-quote">"Dan katakanlah: Ya Rabb, tambahkanlah aku ilmu lain di samping ilmu yang telah Engkau ajarkan padaku!"</div>
                 
                 <div class="button-group">
-                    <!-- Tombol di bawah ini sudah diarahkan ke Google Sites -->
                     <a href="https://sites.google.com/view/daruzziyadah/home" class="btn" target="_blank" rel="noopener noreferrer">Belajar Bersama</a>
                     <a href="#bekerja" class="btn">Bekerja Bersama</a>
                 </div>

@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ronny Abu Faza - Pelajar Sepanjang Hayat</title>
 
+    <!-- ✅ FIX #5: Meta SEO & Social Preview (Open Graph + Twitter Card) -->
+    <meta name="description" content="Ronny Abu Faza - Pelajar Sepanjang Hayat. Belajar Bahasa Arab, Ilmu Islam, dan berkarya bersama.">
+    <meta property="og:title" content="Ronny Abu Faza - Pelajar Sepanjang Hayat">
+    <meta property="og:description" content="Belajar Bahasa Arab, Ilmu Islam, dan berkarya bersama.">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ronnyabufaza/ronnyabufaza.github.io@main/free-photo-of-arabic-language-books-on-a-library-shelf.webp">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ronny Abu Faza - Pelajar Sepanjang Hayat">
+    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ronnyabufaza/ronnyabufaza.github.io@main/free-photo-of-arabic-language-books-on-a-library-shelf.webp">
+
     <!-- FAVICON RAF LOGO -->
     <link rel="icon" type="image/png" href="https://i.ibb.co.com/zHRGCQbS/RAF-Logo.png">
     <link rel="shortcut icon" type="image/png" href="https://i.ibb.co.com/zHRGCQbS/RAF-Logo.png">
     <link rel="apple-touch-icon" href="https://i.ibb.co.com/zHRGCQbS/RAF-Logo.png">
 
+    <!-- ✅ FIX #4: @import diganti <link> + preconnect, supaya font tidak memblokir render.
+         ✅ FIX #3: tambah font Amiri untuk teks Arab (Traditional Arabic hampir pasti tidak
+         terinstall di HP/laptop pengunjung). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -35,7 +50,9 @@
         /* Bagian Kiri */
         .left-section {
             flex: 1.2;
-            background: linear-gradient(rgba(15, 17, 21, 0.7), rgba(15, 17, 21, 0.85)), url('https://github.com/ronnyabufaza/ronnyabufaza.github.io/blob/main/free-photo-of-arabic-language-books-on-a-library-shelf.webp?raw=true') no-repeat center center/cover;
+            /* ✅ FIX #2: URL GitHub "blob...raw=true" (redirect 2x, rawan rate-limit)
+               diganti ke jsDelivr CDN (cache global, lebih cepat & stabil) */
+            background: linear-gradient(rgba(15, 17, 21, 0.7), rgba(15, 17, 21, 0.85)), url('https://cdn.jsdelivr.net/gh/ronnyabufaza/ronnyabufaza.github.io@main/free-photo-of-arabic-language-books-on-a-library-shelf.webp') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -63,10 +80,11 @@
             margin-bottom: 25px;
         }
         .arabic-quote {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: #d4af37;
             margin-bottom: 10px;
-            font-family: 'Traditional Arabic', serif;
+            /* ✅ FIX #3: font Arab yang benar-benar ter-load, dengan fallback yang wajar */
+            font-family: 'Amiri', 'Traditional Arabic', 'Times New Roman', serif;
         }
         .translation-quote {
             font-size: 0.9rem;
@@ -92,6 +110,8 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             background: rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
+            /* ✅ FIX #6: tambahkan prefix -webkit- supaya blur juga jalan di Safari/iOS */
+            -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
             display: inline-block;
             position: relative;
@@ -107,7 +127,13 @@
         /* Bagian Kanan */
         .right-section {
             flex: 1;
-            background: url('https://github.com/ronnyabufaza/ronnyabufaza.github.io/blob/main/Untitled%20design_20260904_205521_0000.png?raw=true') no-repeat center center/cover;
+            /* ✅ FIX #7: background-color fallback kalau gambar gagal dimuat */
+            background-color: #0f1115;
+            /* ✅ FIX #2: sama seperti kiri, pakai jsDelivr CDN */
+            background-image: url('https://cdn.jsdelivr.net/gh/ronnyabufaza/ronnyabufaza.github.io@main/Untitled%20design_20260904_205521_0000.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
             position: relative;
             z-index: 0;
         }
@@ -138,6 +164,7 @@
                 
                 <div class="button-group">
                     <a href="https://sites.google.com/view/daruz/ziyadah" class="btn" target="_blank" rel="noopener noreferrer">Belajar Bersama</a>
+                    <!-- Tombol ini belum diubah (menunggu keputusan tujuan link) -->
                     <a href="#bekerja" class="btn">Bekerja Bersama</a>
                 </div>
             </div>
@@ -146,7 +173,8 @@
         </div>
 
         <!-- Kolom Kanan -->
-        <div class="right-section"></div>
+        <!-- ✅ FIX #7: role + aria-label supaya screen reader tahu ini gambar, bukan kosong -->
+        <div class="right-section" role="img" aria-label="Foto Ronny Abu Faza"></div>
     </div>
 
 </body>
